@@ -1,9 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import CadastroFuncionario from './components/CadastroFuncionario.vue';
 import UserList from './components/UserList.vue';
+import MainMenu from './components/MainMenu.vue';
 // Importe outros componentes conforme necessário
 
 const routes = [
+  {
+    path: '/',
+    name: 'MainMenu',
+    component: MainMenu
+  },
   {
     path: '/cadastro-funcionario',
     name: 'CadastroFuncionario',

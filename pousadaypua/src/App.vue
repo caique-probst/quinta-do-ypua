@@ -2,9 +2,7 @@
   <div id="app">
     <AppSidebar />
     <div class="main-content">
-      <header>
-        <img src="@/assets/Logoypua2.png" alt="Logo" class="logo" />
-      </header>
+      
       <router-view></router-view>
     </div>
   </div>

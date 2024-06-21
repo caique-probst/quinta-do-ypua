@@ -1,5 +1,8 @@
 <template>
   <div class="sidebar">
+    <div class="logo-container">
+      <img src="@/assets/Logoypua.png" alt="Logo" class="logo" />
+    </div>
     <ul>
       <li><router-link to="/">Menu Principal</router-link></li>
       <li><router-link to="/reservas">Reservas</router-link></li>
@@ -19,12 +22,22 @@ export default {
 .sidebar {
   width: 200px;
   height: 100vh;
-  background-color: #343a40;
+  background-color: rgb(188, 11, 39);
   color: white;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 20px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 160px; /* Ajuste o tamanho conforme necessário */
+  height: 130px;
 }
 
 .sidebar ul {
@@ -43,5 +56,10 @@ export default {
 
 .sidebar ul li a:hover {
   text-decoration: underline;
+}
+
+.router-link-active {
+  background-color: #ffbf43; /* Cor RGB(255, 191, 67) */
+  color: black; /* Ajuste a cor do texto conforme necessário */
 }
 </style>
