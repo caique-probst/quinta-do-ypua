@@ -5,7 +5,6 @@
       <li><router-link to="/reservas">Reservas</router-link></li>
       <li><router-link to="/usuarios">Usuários</router-link></li>
       <li><router-link to="/limpeza">Limpeza</router-link></li>
-      <li><router-link to="/cadastro-funcionario">Cadastro de Funcionário</router-link></li>
     </ul>
   </div>
 </template>
