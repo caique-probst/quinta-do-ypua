@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Cadastro de Funcionários</h1>
+    <h1>Usuário</h1>
     <form @submit.prevent="cadastrarFuncionario">
       <div>
         <label for="nome">Nome:</label>
