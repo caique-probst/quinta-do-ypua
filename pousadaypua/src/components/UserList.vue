@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Usuários</h1>
-    <button @click="novoUsuario">Novo usuário</button>
+    <button @click="showPopup = true">Novo usuário</button>
     <table>
       <thead>
         <tr>
@@ -22,26 +22,26 @@
         </tr>
       </tbody>
     </table>
+    <UserPopup v-if="showPopup" @close="showPopup = false">
+      <CadastroFuncionario @cadastrado="showPopup = false" />
+    </UserPopup>
   </div>
 </template>
 
 <script>
+import UserPopup from './UserPopup.vue';
+import CadastroFuncionario from './CadastroFuncionario.vue';
+
 export default {
   name: 'UserList',
+  components: {
+    UserPopup,
+    CadastroFuncionario
+  },
   data() {
     return {
-      usuarios: [
-        { nome: 'Andreia', funcao: 'Recepcionista', status: 'Ativo' },
-        { nome: 'Ivan', funcao: 'Limpeza', status: 'Ativo' },
-        { nome: 'Jade', funcao: 'Limpeza', status: 'Ativo' },
-        { nome: 'Marcos', funcao: 'Gerente', status: 'Ativo' }
-      ]
+      showPopup: false
     };
-  },
-  methods: {
-    novoUsuario() {
-      this.$router.push('/cadastro-funcionario');
-    }
   }
 };
 </script>

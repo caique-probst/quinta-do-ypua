@@ -58,8 +58,7 @@ export default {
   text-decoration: underline;
 }
 
-.router-link-active {
-  background-color: #ffbf43; /* Cor RGB(255, 191, 67) */
-  color: black; /* Ajuste a cor do texto conforme necessário */
+.sidebar ul li a.router-link-active {
+  color: rgb(255, 191, 67);
 }
 </style>
