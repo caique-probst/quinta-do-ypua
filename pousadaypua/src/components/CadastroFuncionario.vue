@@ -7,6 +7,10 @@
         <input type="text" v-model="funcionario.nome" id="nome" required />
       </div>
       <div>
+        <label for="funcao">Função:</label>
+        <input type="text" v-model="funcionario.funcao" id="funcao" required />
+      </div>
+      <div>
         <label for="cpf">CPF:</label>
         <input type="text" v-model="funcionario.cpf" id="cpf" required />
       </div>
@@ -49,6 +53,7 @@ export default {
     return {
       funcionario: {
         nome: '',
+        funcao: '',
         cpf: '',
         rg: '',
         dataNascimento: '',
@@ -70,6 +75,7 @@ export default {
     limparFormulario() {
       this.funcionario = {
         nome: '',
+        funcao: '',
         cpf: '',
         rg: '',
         dataNascimento: '',
