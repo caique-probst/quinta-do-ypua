@@ -1,27 +1,43 @@
 <template>
   <div id="app">
-    <header>
-      <img src="@/assets/Logoypua2.png" alt="Logo" class="logo" />
-    </header>
-    <CadastroFuncionario />
+    <AppSidebar />
+    <div class="main-content">
+      <header>
+        <img src="@/assets/Logoypua2.png" alt="Logo" class="logo" />
+      </header>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import CadastroFuncionario from './components/CadastroFuncionario.vue';
+import AppSidebar from './components/AppSidebar.vue';
 
 export default {
   name: 'App',
   components: {
-    CadastroFuncionario
+    AppSidebar
   }
 };
 </script>
 
 <style>
 /* Adicione seus estilos globais aqui */
+body {
+  background-color: #f0f0f0; /* Cor de fundo cinza */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 #app {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 200px; /* Espaço para a sidebar */
+  flex-grow: 1;
   text-align: center;
+  padding: 20px;
 }
 
 header {
