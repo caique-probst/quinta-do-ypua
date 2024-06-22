@@ -1,26 +1,53 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <AppSidebar />
+    <div class="main-content">
+      
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppSidebar from './components/AppSidebar.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppSidebar
   }
-}
+};
 </script>
 
 <style>
+/* Adicione seus estilos globais aqui */
+body {
+  background-color: #f0f0f0; /* Cor de fundo cinza */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+}
+
+.main-content {
+  margin-left: 200px; /* Espaço para a sidebar */
+  flex-grow: 1;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  margin-right: auto; /* Alinha o logo à esquerda */
 }
 </style>
