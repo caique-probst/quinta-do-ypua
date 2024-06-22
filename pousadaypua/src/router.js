@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import CadastroFuncionario from './components/CadastroFuncionario.vue';
 import UserList from './components/UserList.vue';
 import MainMenu from './components/MainMenu.vue';
-// Importe outros componentes conforme necessário
+import ReservasView from './components/ReservasView.vue';
 
 const routes = [
   {
@@ -19,6 +19,11 @@ const routes = [
     path: '/usuarios',
     name: 'UserList',
     component: UserList
+  },
+  {
+    path: '/reservas',
+    name: 'ReservasView',
+    component: ReservasView
   },
   // Adicione outras rotas aqui
 ];
