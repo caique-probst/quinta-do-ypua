@@ -1,6 +1,8 @@
-Temos o front-end feito em Vue.js, feito pela equipe no geral.
+## Front-end 
+Feito pela equipe no geral, utilizamos o Vue.js, .
 
-Back-end feito pelo Cauã Cardozo Guimarães, em java 
+## Back-end 
+Feito pelo Cauã Cardozo Guimarães, utilizando o java.
 
 ## Dia 21/06/2024
 Possui já uma API que está conectada ao banco h2, não consegui no momento conectar ainda no sql, mas logo farei.
