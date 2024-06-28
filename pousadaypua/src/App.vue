@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <AppSidebar />
     <div class="main-content">
       
       <router-view></router-view>
@@ -9,12 +8,10 @@
 </template>
 
 <script>
-import AppSidebar from './components/AppSidebar.vue';
 
 export default {
   name: 'App',
   components: {
-    AppSidebar
   }
 };
 </script>

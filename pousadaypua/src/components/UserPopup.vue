@@ -1,4 +1,5 @@
 <template>
+      <AppSidebar />
     <div class="popup-overlay">
       <div class="popup-container">
         <div class="popup-content">
@@ -11,8 +12,11 @@
   </template>
   
   <script>
+import AppSidebar from './AppSidebar.vue';
+
   export default {
     name: 'UserPopup',
+    components: AppSidebar,
     methods: {
       closePopup() {
         this.$emit('close');

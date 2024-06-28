@@ -1,5 +1,6 @@
 <template>
     <div>
+        <AppSidebar/>
       <h1>Menu Principal</h1>
       <table>
         <thead>
@@ -24,10 +25,15 @@
       </table>
     </div>
   </template>
-  
+
   <script>
+  import AppSidebar from './AppSidebar.vue';
+
   export default {
-    name: 'MainMenu'
+    name: 'MainMenu',
+    components: {
+      AppSidebar
+    }
   };
   </script>
   

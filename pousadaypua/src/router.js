@@ -3,6 +3,7 @@ import CadastroFuncionario from './components/CadastroFuncionario.vue';
 import UserList from './components/UserList.vue';
 import MainMenu from './components/MainMenu.vue';
 import ReservasView from './components/ReservasView.vue';
+import LoginView from './components/LoginView.vue';
 
 const routes = [
   {
@@ -25,7 +26,11 @@ const routes = [
     name: 'ReservasView',
     component: ReservasView
   },
-  // Adicione outras rotas aqui
+  {
+    path: '/login',
+    name: 'LoginView',
+    component: LoginView
+  },
 ];
 
 const router = createRouter({
