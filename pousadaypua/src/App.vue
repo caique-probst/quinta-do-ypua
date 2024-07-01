@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <div class="main-content">
-      
-      <router-view></router-view>
+      <router-view>
+        <LoginView/>
+      </router-view>
     </div>
   </div>
 </template>
 
 <script>
+import LoginView from './components/LoginView.vue';
 
 export default {
   name: 'App',
   components: {
+    LoginView,
   }
 };
 </script>
