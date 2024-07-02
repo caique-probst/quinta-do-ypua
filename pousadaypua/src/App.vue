@@ -1,14 +1,31 @@
 <template>
   <div id="app">
-    <router-view />
+    <AppSidebar v-if="!isLoginView" />
+    <div class="main-content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
+import AppSidebar from './components/AppSidebar.vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AppSidebar
+  },
+  computed: {
+    isLoginView() {
+      return this.$route.name === 'LoginView';
+    }
+  }
 };
 </script>
+
+<style>
+/* Seus estilos globais aqui */
+</style>
 
 <style>
 /* Adicione seus estilos globais aqui */

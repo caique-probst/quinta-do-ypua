@@ -10,13 +10,11 @@
 
 <script>
 import ReservaItem from './ReservaItem.vue'
-import AppSidebar from './AppSidebar.vue';
 
 export default {
   name: 'MainMenu',
   components: {
     ReservaItem,
-    AppSidebar
   },
   data() {
     return {
