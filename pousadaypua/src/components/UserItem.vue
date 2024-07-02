@@ -1,5 +1,5 @@
 <template>
-    <div class="user-item" @click="showUserDetails(user.id)">
+    <div class="user-item">
       <div class="user-info">
         <div class="user-info-item">
           <p>Nome:</p>
@@ -14,14 +14,16 @@
           <p>{{ user.status }}</p>
         </div>
         <div class="user-info-item">
-          <p>Ações:</p>
-          <p>{{ user.ações }}</p>
+          <button @click="showActionsPopup = true">Ações</button>
+          <UserActionsPopup v-if="showActionsPopup" @close="showActionsPopup = false" @edit="editUser" @delete="deleteUser"/>
         </div>
       </div>
     </div>
   </template>
   
   <script>
+  import UserActionsPopup from './UserActionsPopup.vue';
+  
   export default {
     name: 'UserItem',
     props: {
@@ -30,9 +32,20 @@
         required: true
       }
     },
+    components: {
+      UserActionsPopup
+    },
+    data() {
+      return {
+        showActionsPopup: false
+      };
+    },
     methods: {
-      showUserDetails(id) {
-        this.$router.push({ name: 'UserDetails', params: { id } });
+      editUser() {
+        this.$emit('edit', this.user);
+      },
+      deleteUser() {
+        this.$emit('delete', this.user);
       }
     }
   }
@@ -65,4 +78,3 @@
     padding-top: 15px;
   }
   </style>
-  
