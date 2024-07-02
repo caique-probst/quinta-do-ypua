@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <AppSidebar />
+    <AppSidebar v-if="!isLoginView" />
     <div class="main-content">
-      
       <router-view></router-view>
     </div>
   </div>
@@ -15,9 +14,18 @@ export default {
   name: 'App',
   components: {
     AppSidebar
+  },
+  computed: {
+    isLoginView() {
+      return this.$route.name === 'LoginView';
+    }
   }
 };
 </script>
+
+<style>
+/* Seus estilos globais aqui */
+</style>
 
 <style>
 /* Adicione seus estilos globais aqui */
