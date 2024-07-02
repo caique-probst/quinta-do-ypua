@@ -1,21 +1,12 @@
 <template>
   <div id="app">
-    <AppSidebar />
-    <div class="main-content">
-      
-      <router-view></router-view>
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import AppSidebar from './components/AppSidebar.vue';
-
 export default {
-  name: 'App',
-  components: {
-    AppSidebar
-  }
+  name: 'App'
 };
 </script>
 
