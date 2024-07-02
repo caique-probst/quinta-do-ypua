@@ -1,50 +1,66 @@
 <template>
-    <div class="reserva-item" @click="showReservaDetails(reserva.id)">
-      <div class="reserva-info">
-        <div class="reserva-info-item">
-          <p>Nome:</p>
-          <p>{{ reserva.nome }}</p>
-        </div>
-        <div class="reserva-info-item">
-          <p>Entrada:</p>
-          <p>{{ reserva.entrada }}</p>
-        </div>
-        <div class="reserva-info-item">
-          <p>Saída:</p>
-          <p>{{ reserva.saida }}</p>
-        </div>
-        <div class="reserva-info-item">
-          <p>Status:</p>
-          <p>{{ reserva.status }}</p>
-        </div>
-        <div class="reserva-info-item">
-          <p>Acomodação:</p>
-          <p>{{ reserva.acomodacao }}</p>
-        </div>
+  <div class="reserva-item" @click="showReservaDetails(reserva.id)">
+    <div class="reserva-info">
+      <div class="reserva-info-item">
+        <p>id:</p>
+        <p>{{ reserva.id }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Nome:</p>
+        <p>{{ reserva.nome }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Entrada:</p>
+        <p>{{ reserva.entrada }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Saída:</p>
+        <p>{{ reserva.saida }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Status:</p>
+        <p>{{ reserva.status }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Acomodação:</p>
+        <p>{{ reserva.acomodacao }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Responsáveis:</p>
+        <p>{{ reserva.responsaveis.join(', ') }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Check in:</p>
+        <p>{{ reserva.checkIn }}</p>
+      </div>
+      <div class="reserva-info-item">
+        <p>Check out:</p>
+        <p>{{ reserva.checkOut }}</p>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ReservaLimpezaItem',
-    props: {
-      reserva: {
-        type: Object,
-        required: true
-      },
-      reservaId: {
-        type: Number,
-        required: true
-      }
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ReservaLimpezaItem',
+  props: {
+    reserva: {
+      type: Object,
+      required: true
     },
-    methods: {
-      showReservaDetails(id) {
-        this.$router.push({ name: 'ReservaDetails', params: { id } });
-      }
+    reservaId: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    showReservaDetails(id) {
+      this.$router.push({ name: 'ReservaLimpezaDetails', params: { id } });
     }
   }
-  </script>
+}
+</script>
   
   <style scoped>
   .reserva-item {
