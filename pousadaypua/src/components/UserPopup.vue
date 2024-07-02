@@ -36,6 +36,7 @@
   }
   
   .popup-container {
+    width: 800px;
     background-color: white;
     padding: 20px;
     border-radius: 5px;
@@ -45,6 +46,7 @@
   .popup-content {
     max-width: 500px;
     text-align: center;
+    justify-content: space-between;
   }
   
   button {

@@ -5,6 +5,8 @@ import MainMenu from './components/MainMenu.vue';
 import ReservasView from './components/ReservasView.vue';
 import ReservaDetails from './components/ReservaDetails.vue';
 import LimpezaView from './components/LimpezaView.vue';
+import ReservaLimpezaDetails from './components/ReservaLimpezaDetails.vue';
+
 
 const routes = [
   {
@@ -37,6 +39,12 @@ const routes = [
     path: '/limpeza',
     name: 'LimpezaView',
     component: LimpezaView
+  },
+  {
+    path: '/reserva-limpeza/:id',
+    name: 'ReservaLimpezaDetails',
+    component: ReservaLimpezaDetails,
+    props: true
   }
 ];
 
