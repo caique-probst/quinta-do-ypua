@@ -1,4 +1,5 @@
 <template>
+  <AppSidebar/>
   <div>
     <h1>Menu Principal</h1>
     <div class="reservas-container">
@@ -9,11 +10,13 @@
 
 <script>
 import ReservaItem from './ReservaItem.vue'
+import AppSidebar from './AppSidebar.vue';
 
 export default {
   name: 'MainMenu',
   components: {
-    ReservaItem
+    ReservaItem,
+    AppSidebar
   },
   data() {
     return {

@@ -4,7 +4,7 @@
       <img src="@/assets/Logoypua.png" alt="Logo" class="logo" />
     </div>
     <ul>
-      <li><router-link to="/">Menu Principal</router-link></li>
+      <li><router-link to="/MainMenu">Menu Principal</router-link></li>
       <li><router-link to="/reservas">Reservas</router-link></li>
       <li><router-link to="/usuarios">Usuários</router-link></li>
       <li><router-link to="/limpeza">Limpeza</router-link></li>

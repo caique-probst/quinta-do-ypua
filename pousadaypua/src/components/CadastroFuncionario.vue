@@ -1,4 +1,5 @@
 <template>
+  <AppSidebar/>
   <div>
     <h1>Usuário</h1>
     <form @submit.prevent="cadastrarFuncionario">
@@ -48,7 +49,11 @@
 </template>
 
 <script>
+import AppSidebar from './AppSidebar.vue';
 export default {
+  components:{ 
+    AppSidebar,
+},
   data() {
     return {
       funcionario: {
