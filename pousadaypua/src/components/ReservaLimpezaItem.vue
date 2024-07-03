@@ -11,7 +11,7 @@
       </div>
       <div class="reserva-info-item">
         <p>Entrada:</p>
-        <p>{{ reserva.entrada }}</p>    
+        <p>{{ reserva.entrada }}</p>
       </div>
       <div class="reserva-info-item">
         <p>Saída:</p>
@@ -84,7 +84,7 @@ export default {
     padding: 40px;
   }
   
-  .reserva-info-item p {
+  .reserva-info-item p {  
     margin: 0;
     padding-top: 15px;
   }
