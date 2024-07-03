@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import LoginView from './components/LoginView.vue';
 import CadastroFuncionario from './components/CadastroFuncionario.vue';
 import UserList from './components/UserList.vue';
 import MainMenu from './components/MainMenu.vue';
@@ -10,7 +11,7 @@ import ReservaLimpezaDetails from './components/ReservaLimpezaDetails.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/MainMenu',
     name: 'MainMenu',
     component: MainMenu
   },
@@ -45,6 +46,11 @@ const routes = [
     name: 'ReservaLimpezaDetails',
     component: ReservaLimpezaDetails,
     props: true
+  },
+  {
+    path: '/',
+    name: 'LoginView',
+    component: LoginView
   }
 ];
 

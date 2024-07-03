@@ -2,65 +2,69 @@
   <div>
     <h1>Usuários</h1>
     <button @click="showPopup = true">Novo usuário</button>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Função</th>
-          <th>Status</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="usuario in usuarios" :key="usuario.nome">
-          <td>{{ usuario.nome }}</td>
-          <td>{{ usuario.funcao }}</td>
-          <td>{{ usuario.status }}</td>
-          <td>
-            <!-- Adicione ações aqui, como editar ou excluir -->
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="users-container">
+      <UserItem v-for="user in users" :key="user.nome" :user="user" @edit="editarUsuario" @delete="excluirUsuario" />
+    </div>
     <UserPopup v-if="showPopup" @close="showPopup = false">
-      <CadastroFuncionario @cadastrado="showPopup = false" />
+      <CadastroFuncionario @cadastrado="adicionarUsuario" />
     </UserPopup>
   </div>
 </template>
 
 <script>
+import UserItem from './UserItem.vue';
 import UserPopup from './UserPopup.vue';
 import CadastroFuncionario from './CadastroFuncionario.vue';
 
 export default {
   name: 'UserList',
   components: {
+    UserItem,
     UserPopup,
     CadastroFuncionario
   },
   data() {
     return {
-      showPopup: false
-    };
+      showPopup: false,
+      users: [
+        {
+          id: 1,
+          nome: 'Ivan Santos',
+          função: 'Faxina',
+          status: 'Trabalhando',
+          ações: '01'
+        },
+        {
+          id: 2,
+          nome: 'Rogerio Ceni',
+          função: 'Faxina',
+          status: 'Trabalhando',
+          ações: '01'
+        }
+      ]
+    }
+  },
+  methods: {
+    adicionarUsuario(usuario) {
+      this.users.push(usuario);
+      this.showPopup = false;
+    },
+    editarUsuario(usuario) {
+      // Implemente a lógica para editar o usuário
+      console.log('Editar usuário:', usuario);
+    },
+    excluirUsuario(usuario) {
+      this.users = this.users.filter(u => u.id !== usuario.id);
+    }
   }
-};
+}
 </script>
 
 <style scoped>
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #000000;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 button {

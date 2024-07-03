@@ -62,7 +62,7 @@ export default {
 }
 </script>
   
-  <style scoped>
+<style scoped>
   .reserva-item {
     border: 1px solid #ccc;
     padding: 10px;

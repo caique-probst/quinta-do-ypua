@@ -10,5 +10,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const app = createApp(App);
 app.use(router);
 app.mount('#app');
+const app = createApp(App);
+app.use(router);
 app.use(BootstrapVue3);
 app.mount('#app');

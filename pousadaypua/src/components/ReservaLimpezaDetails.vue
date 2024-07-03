@@ -1,5 +1,6 @@
 <template>
     <div class="reserva-details">
+      
       <h1>Informações da Reserva</h1>
       <div class="reserva-info">
         <div class="reserva-info-item">
@@ -15,21 +16,25 @@
           <p>{{ reserva.checkOut }}</p>
         </div>
       </div>
-      <div class="consumidos">
-        <h2>Itens Trocados</h2>
-        <div class="consumidos-item" v-for="item in reserva.itensTrocados" :key="item.nome">
+
+      <div class="trocados">
+      <h2>Itens Trocados</h2>
+      <div class="trocados-item" v-for="(item, index) in reserva.itensTrocados" :key="item.nome">
+        <div class="checkbox-container">
+          <input type="checkbox" :checked="item.trocado" @change="toggleItemTrocado(index)">
           <p>{{ item.nome }}:</p>
-          <p>{{ item.quantidade }}</p>
         </div>
-      </div>
-      <div class="limpeza">
-        <h2>Limpeza</h2>
-        <div class="limpeza-item" v-for="item in reserva.limpeza" :key="item.data">
-          <p>{{ item.data }} - {{ item.hora }} - {{ item.responsavel }}</p>
-        </div>
+        <p>{{ item.quantidade }}</p>
       </div>
     </div>
-  </template>
+    <div class="limpeza">
+      <h2>Limpeza</h2>
+      <div class="limpeza-item" v-for="item in reserva.limpeza" :key="item.data">
+        <p>{{ item.data }} - {{ item.hora }} - {{ item.responsavel }}</p>
+      </div>
+    </div>
+  </div>
+</template>
   
   <script>
   export default {
@@ -51,7 +56,14 @@
         responsaveis: [],
         checkIn: '',
         checkOut: '',
-        itensTrocados: [],
+        itensTrocados: [
+          { nome: 'Roupa de cama', quantidade: '', trocado: false },
+          { nome: 'Toalhas', quantidade: '', trocado: false },
+          { nome: 'Sabonete', quantidade: '', trocado: false },
+          { nome: 'Shampoo', quantidade: '', trocado: false },
+          { nome: 'Condicionador', quantidade: '', trocado: false },
+          { nome: 'Saco de lixo', quantidade: '', trocado: false }
+        ],
         limpeza: []
       }
     }
@@ -98,26 +110,51 @@
   }
   
   .reserva-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex
   }
   
   .reserva-info-item {
-    text-align: left;
+    text-align: center;
+    padding: 40px;
   }
   
   .reserva-info-item p {
+    justify-content: space-between;
     margin: 0;
   }
   
-  .consumidos, .limpeza {
+  .trocados {
+    border: 1px solid #ccc;
+    padding: 10px;
     margin-top: 40px;
   }
   
-  .consumidos-item, .limpeza-item {
+  .limpeza {
+    border: 1px solid #ccc;
+    margin-top: 40px;
+  }
+
+  .trocados-item {
     display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+    }
+
+  .limpeza-item {
+    display: flex;
     margin-bottom: 10px;
   }
+
+  .checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-left: 10px;
+}
+  
   </style>
