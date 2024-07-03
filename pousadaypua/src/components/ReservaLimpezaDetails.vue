@@ -11,7 +11,7 @@
         <p class="value">{{ reserva.checkIn }}</p>
       </div>
       <div class="reserva-info-item">
-        <p class="label">Check out:</p>
+        <p class="label">Check out:</p>   
         <p class="value">{{ reserva.checkOut }}</p>
       </div>
     </div>
