@@ -84,7 +84,7 @@ export default {
     padding: 40px;
   }
   
-  .reserva-info-item p {
+  .reserva-info-item p {  
     margin: 0;
     padding-top: 15px;
   }
