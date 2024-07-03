@@ -11,7 +11,7 @@
       </div>
       <div class="reserva-info-item">
         <p>Entrada:</p>
-        <p>{{ reserva.entrada }}</p>
+        <p>{{ reserva.entrada }}</p>    
       </div>
       <div class="reserva-info-item">
         <p>Saída:</p>
