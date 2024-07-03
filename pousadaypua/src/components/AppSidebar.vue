@@ -4,10 +4,10 @@
       <img src="@/assets/Logoypua.png" alt="Logo" class="logo" />
     </div>
     <ul>
-      <li><router-link to="/MainMenu">Menu Principal</router-link></li>
-      <li><router-link to="/reservas">Reservas</router-link></li>
-      <li><router-link to="/usuarios">Usuários</router-link></li>
-      <li><router-link to="/limpeza">Limpeza</router-link></li>
+      <li><router-link to="/MainMenu"><span><img src="../assets/menu.png" alt=""></span>Menu Principal</router-link></li>
+      <li><router-link to="/reservas"><span><img src="../assets/Reserva.png" alt=""></span>Reservas</router-link></li>
+      <li><router-link to="/usuarios"><span><img src="../assets/users.png" alt=""></span> Usuários</router-link></li>
+      <li><router-link to="/limpeza"><span><img src="../assets/limpeza.png" alt=""></span> Limpeza</router-link></li>
     </ul>
   </div>
 </template>

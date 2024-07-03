@@ -7,6 +7,7 @@ import ReservasView from './components/ReservasView.vue';
 import ReservaDetails from './components/ReservaDetails.vue';
 import LimpezaView from './components/LimpezaView.vue';
 import ReservaLimpezaDetails from './components/ReservaLimpezaDetails.vue';
+import NovaReserva from './components/NovaReserva.vue'
 
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: '/MainMenu',
     name: 'MainMenu',
     component: MainMenu
+  },
+  {
+    path: '/Novareserva',
+    name: 'NovaReserva',
+    component: NovaReserva
   },
   {
     path: '/cadastro-funcionario',
