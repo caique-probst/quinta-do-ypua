@@ -21,11 +21,17 @@
         <p>Acomodação:</p>
         <p>{{ reserva.acomodacao }}</p>
       </div>
+      <div class="user-info-item">
+        <button @click="showActionsPopup = true">:</button>
+        <ReservaActionsPopup v-if="showActionsPopup" @close="showActionsPopup = false" @edit="editUser" @delete="deleteUser"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ReservaActionsPopup from './ReservaActionsPopup.vue';
+
 export default {
   name: 'ReservaItem',
   props: {
@@ -38,9 +44,23 @@ export default {
       required: true
     }
   },
+  components: {
+      ReservaActionsPopup
+  },
+  data() {
+      return {
+        showActionsPopup: false
+      };
+    },
   methods: {
     showReservaDetails(id) {
       this.$router.push({ name: 'ReservaDetails', params: { id } });
+    },
+    editUser() {
+      this.$emit('edit', this.reserva);
+    },
+    deleteUser() {
+      this.$emit('delete', this.reserva);
     }
   }
 }
