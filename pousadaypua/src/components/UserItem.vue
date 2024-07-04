@@ -14,7 +14,7 @@
           <p>{{ user.status }}</p>
         </div>
         <div class="user-info-item">
-          <button @click="showActionsPopup = true">Ações</button>
+          <button @click="showActionsPopup = true">:</button>
           <UserActionsPopup v-if="showActionsPopup" @close="showActionsPopup = false" @edit="editUser" @delete="deleteUser"/>
         </div>
       </div>
