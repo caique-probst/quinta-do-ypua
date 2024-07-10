@@ -4,7 +4,7 @@ Feito pela equipe no geral, utilizamos o Vue.js, .
 ## Back-end 
 Feito pelo Cauã Cardozo Guimarães, utilizando o java.
 
-##Deploy
+## Deploy
 O deploy foi feito no firebase pelo Cauã Cardozo Guimarães, onde ele fez as seguintes etapas:
 Primeiramente instalar o firebase na sua máquina usando o "npm install firebase-tools -g"
 criar um projeto e uma conta caso não tenha no firebase e após isso dar os seguintes comandos
