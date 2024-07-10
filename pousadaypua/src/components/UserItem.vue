@@ -15,7 +15,12 @@
       </div>
       <div class="user-info-item">
         <button class="actions-button" @click="showActionsPopup = true">⋮</button>
-        <UserActionsPopup v-if="showActionsPopup" @close="showActionsPopup = false" @edit="editUser" @delete="deleteUser"/>
+        <UserActionsPopup 
+          v-if="showActionsPopup" 
+          @close="showActionsPopup = false" 
+          @edit="editUser" 
+          @delete="deleteUser"
+        />
       </div>
     </div>
   </div>
@@ -42,9 +47,11 @@ export default {
   },
   methods: {
     editUser() {
+      alert(`Editando usuário: ${this.user.nome}`);
       this.$emit('edit', this.user);
     },
     deleteUser() {
+      alert(`Excluindo usuário: ${this.user.nome}`);
       this.$emit('delete', this.user);
     }
   }
