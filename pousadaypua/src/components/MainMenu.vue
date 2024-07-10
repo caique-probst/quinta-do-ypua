@@ -35,7 +35,6 @@ export default {
           status: 'Pago',
           acomodacao: '01'
         }
-        // Adicione mais reservas conforme necessário
       ]
     }
   }
