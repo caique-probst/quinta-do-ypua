@@ -3,7 +3,9 @@
     <h1>Usuários</h1>
     <button @click="showPopup = true">Novo usuário</button>
     <div class="users-container">
-      <UserItem v-for="user in users" :key="user.nome" :user="user" @edit="editarUsuario" @delete="excluirUsuario" />
+      <UserItem v-for="user in users" :key="user.nome" :user="user" @edit="editarUsuario" @delete="excluirUsuario">
+        <button class="actions-button" @click="toggleActions(user.id)">...</button>
+      </UserItem>
     </div>
     <UserPopup v-if="showPopup" @close="showPopup = false">
       <CadastroFuncionario @cadastrado="adicionarUsuario" />
@@ -32,16 +34,15 @@ export default {
           nome: 'Ivan Santos',
           função: 'Faxina',
           status: 'Trabalhando',
-          ações: '01'
         },
         {
           id: 2,
           nome: 'Rogerio Ceni',
           função: 'Faxina',
           status: 'Trabalhando',
-          ações: '01'
         }
-      ]
+      ],
+      actionsVisible: {}
     }
   },
   methods: {
@@ -50,11 +51,13 @@ export default {
       this.showPopup = false;
     },
     editarUsuario(usuario) {
-      // Implemente a lógica para editar o usuário
       console.log('Editar usuário:', usuario);
     },
     excluirUsuario(usuario) {
       this.users = this.users.filter(u => u.id !== usuario.id);
+    },
+    toggleActions(userId) {
+      this.$set(this.actionsVisible, userId, !this.actionsVisible[userId]);
     }
   }
 }
@@ -79,5 +82,17 @@ button {
 
 button:hover {
   background-color: #369f6e;
+}
+
+.actions-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #42b983;
+}
+
+.actions-button:hover {
+  color: #369f6e;
 }
 </style>
