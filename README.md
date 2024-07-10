@@ -3,6 +3,9 @@ Feito pela equipe no geral, utilizamos o Vue.js, .
 
 ## Back-end 
 Feito pelo Cauã Cardozo Guimarães, utilizando o java.
+Os caminhos das requisições da api, em resumo são: 
+http://localhost:8080/api/v1/usuario para os methods: GET e POST
+http://localhost:8080/api/v1/usuario/(id) para os methods: PUT, GET BY ID e DELETE
 
 ## Deploy
 O deploy foi feito no firebase pelo Cauã Cardozo Guimarães, onde ele fez as seguintes etapas:
